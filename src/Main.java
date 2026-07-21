@@ -7,6 +7,7 @@
 
             String choice1;
             String Service;
+            String merchantChoice;
 
             System.out.print("You must pick road A or road B: ");
             choice1 = scanner.nextLine();
@@ -51,6 +52,19 @@
                 System.out.println("You fill your bags and go on your way");
 
                 // meet the merchant
+                System.out.println("As you enter the room you encounter an unknown man");
+                System.out.println("He calls you to come over, and asks if you want to see what he has for sale");
+                System.out.println("A. Sword (+5 attack)");
+                System.out.println("B. Health potion (+10 HP restore)");
+                merchantChoice = scanner.nextLine();
+
+                if (merchantChoice.equals("a")){
+                    System.out.println("You have selected the sword");
+                } else if (merchantChoice.equals("b")) {
+                    System.out.println("You have selected the health potion");
+                }
+
+                // Boss fight
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
             } else {
