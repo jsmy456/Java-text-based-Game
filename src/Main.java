@@ -8,6 +8,7 @@
             String choice1;
             String Service;
             String merchantChoice;
+            String directChoice;
 
             System.out.print("You must pick road A or road B: ");
             choice1 = scanner.nextLine();
@@ -65,6 +66,19 @@
                 }
 
                 // Boss fight
+                System.out.println("You leave the merchant and walk through the large door");
+                System.out.println("In the room you meet the dark king");
+                System.out.println("You use the item you bought from the merchant"); // sword or health potion
+                System.out.println("The dark king attacks");
+                System.out.println("You move left or right: ");
+                directChoice = scanner.nextLine();
+
+                if (directChoice.equals("left")) {
+                    System.out.println("The blade moves past your face by millimeters");
+                } else {
+                    System.out.println("The blade slices across your face drawing blood");
+                    System.out.println("The attack causes +10 damage");
+                }
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
             } else {
