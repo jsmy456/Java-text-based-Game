@@ -58,6 +58,8 @@
                 System.out.println("A. Sword (+5 attack)");
                 System.out.println("B. Health potion (+10 HP restore)");
                 merchantChoice = scanner.nextLine();
+                hero.Inventory.add(merchantChoice);
+
 
                 if (merchantChoice.equals("a")){
                     System.out.println("You have selected the sword");
@@ -66,6 +68,7 @@
                 }
 
                 // Boss fight
+                System.out.println(hero.Inventory);
                 System.out.println("You leave the merchant and walk through the large door");
                 System.out.println("In the room you meet the dark king");
                 System.out.println("You use the item you bought from the merchant"); // sword or health potion
@@ -78,6 +81,8 @@
                 } else {
                     System.out.println("The blade slices across your face drawing blood");
                     System.out.println("The attack causes +10 damage");
+                    hero.health -= 10;
+                    System.out.println("Your health is now: " + hero.health);
                 }
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
