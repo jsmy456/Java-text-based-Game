@@ -39,11 +39,11 @@
                 } else if (Service.equals("c")) {
                     System.out.println("The knight draws their sword and swings at you");
                     System.out.println("Their blade connects");
-                    // Need to add Hero class here - subtract attack from hero health
-                    hero.health -= 10;
+                    hero.health -= 10; // even if not going down this path, 10 points still being taken from health
                     System.out.println("You stumble backwards falling down the embankment into some shrubs, hidden.");
                     System.out.println("Your remaining health is: " + hero.health);
                 }
+
                 // need to add next act - find the treasure
                 System.out.println("You come to the spot marked on your map");
                 System.out.println("You begin to dig");
@@ -58,17 +58,18 @@
                 System.out.println("A. Sword (+5 attack)");
                 System.out.println("B. Health potion (+10 HP restore)");
                 merchantChoice = scanner.nextLine();
-                hero.Inventory.add(merchantChoice);
 
 
                 if (merchantChoice.equals("a")){
                     System.out.println("You have selected the sword");
+                    hero.Inventory.add("sword");
                 } else if (merchantChoice.equals("b")) {
                     System.out.println("You have selected the health potion");
+                    hero.Inventory.add("Health potion");
                 }
 
                 // Boss fight
-                System.out.println(hero.Inventory);
+                System.out.println("Inventory: " + hero.Inventory);
                 System.out.println("You leave the merchant and walk through the large door");
                 System.out.println("In the room you meet the dark king");
                 System.out.println("You use the item you bought from the merchant"); // sword or health potion
