@@ -9,8 +9,9 @@
             String Service;
             String merchantChoice;
             String directChoice;
+            String hpChoice;
 
-            System.out.print("You must pick road A or road B: ");
+            System.out.print("You must pick room A or room B: ");
             choice1 = scanner.nextLine();
 
             // Consequence of first choice (choice1)
@@ -30,12 +31,11 @@
                     System.out.println("You push your way past the knight before they pull their sword, sending them tumbling down an embankment");
                     System.out.println("You escape unharmed, barely");
 
-                    // need to add next act
                     System.out.println("You ");
                 } else if (Service.equals("b")) {
                     System.out.println("The knight makes no move to block your path and you continue your journey");
 
-                    // need to add next act
+
                 } else if (Service.equals("c")) {
                     System.out.println("The knight draws their sword and swings at you");
                     System.out.println("Their blade connects");
@@ -44,7 +44,7 @@
                     System.out.println("Your remaining health is: " + hero.health);
                 }
 
-                // need to add next act - find the treasure
+                // find the treasure
                 System.out.println("You come to the spot marked on your map");
                 System.out.println("You begin to dig");
                 System.out.println("You soon hit something hard underneath the soft ground");
@@ -58,7 +58,6 @@
                 System.out.println("A. Sword (+5 attack)");
                 System.out.println("B. Health potion (+10 HP restore)");
                 merchantChoice = scanner.nextLine();
-
 
                 if (merchantChoice.equals("a")){
                     System.out.println("You have selected the sword");
@@ -85,6 +84,22 @@
                     hero.health -= 10;
                     System.out.println("Your health is now: " + hero.health);
                 }
+
+                // prompts health consideration
+                if (hero.health < 100) {
+                    System.out.println("Inventory: " + hero.Inventory);
+                    System.out.println("Do have a health potion (Y/N): ");
+                    hpChoice = scanner.nextLine();
+
+                    if (hpChoice.equals("y")) {
+                        hero.health += 10;
+                    } else {
+                        System.out.println("You do not have any health potions");
+                    }
+                }
+
+                // attacking the boss
+
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
             } else {
