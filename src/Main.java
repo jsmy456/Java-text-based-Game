@@ -4,6 +4,7 @@
         public static void main (String[] args) {
             Scanner scanner = new Scanner(System.in);
             Hero hero = new Hero();
+            Boss boss = new Boss();
 
             String choice1;
             String Service;
@@ -39,7 +40,7 @@
                 } else if (Service.equals("c")) {
                     System.out.println("The knight draws their sword and swings at you");
                     System.out.println("Their blade connects");
-                    hero.health -= 10; // even if not going down this path, 10 points still being taken from health
+                    hero.health -= 10;
                     System.out.println("You stumble backwards falling down the embankment into some shrubs, hidden.");
                     System.out.println("Your remaining health is: " + hero.health);
                 }
@@ -55,7 +56,7 @@
                 // meet the merchant
                 System.out.println("As you enter the room you encounter an unknown man");
                 System.out.println("He calls you to come over, and asks if you want to see what he has for sale");
-                System.out.println("A. Sword (+5 attack)");
+                System.out.println("A. Sword (+10 attack)");
                 System.out.println("B. Health potion (+10 HP restore)");
                 merchantChoice = scanner.nextLine();
 
@@ -88,17 +89,30 @@
                 // prompts health consideration
                 if (hero.health < 100) {
                     System.out.println("Inventory: " + hero.Inventory);
-                    System.out.println("Do have a health potion (Y/N): ");
+                    System.out.println("Do you have a health potion (Y/N): ");
                     hpChoice = scanner.nextLine();
 
                     if (hpChoice.equals("y")) {
                         hero.health += 10;
+                        System.out.println("Your health is now: " + hero.health);
                     } else {
                         System.out.println("You do not have any health potions");
                     }
                 }
 
                 // attacking the boss
+                System.out.println("You move to attack");
+                // if statement that checks if inventory has sword
+                if(hero.Inventory.contains("sword")) {
+                    hero.attack += 10;
+                    System.out.println("You attack with 15 damage");
+                    boss.health -= hero.attack;
+                    System.out.println("The Dark kings health is: " + boss.health);
+                } else {
+                    System.out.println("You attack with 5 damage");
+                }
+
+                // Boss Response
 
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
