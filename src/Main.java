@@ -11,6 +11,7 @@
             String merchantChoice;
             String directChoice;
             String hpChoice;
+            String bossResponse;
 
             System.out.print("You must pick room A or room B: ");
             choice1 = scanner.nextLine();
@@ -31,12 +32,8 @@
                     System.out.println("The knight moves to block your path and pull his sword");
                     System.out.println("You push your way past the knight before they pull their sword, sending them tumbling down an embankment");
                     System.out.println("You escape unharmed, barely");
-
-                    System.out.println("You ");
                 } else if (Service.equals("b")) {
                     System.out.println("The knight makes no move to block your path and you continue your journey");
-
-
                 } else if (Service.equals("c")) {
                     System.out.println("The knight draws their sword and swings at you");
                     System.out.println("Their blade connects");
@@ -113,6 +110,21 @@
                 }
 
                 // Boss Response
+                System.out.println("The dark king attacks from the right");
+                System.out.println("You can: A. parry or B. side-step");
+                bossResponse = scanner.nextLine();
+
+                if (bossResponse.equals("a")) {
+                    System.out.println("You parry the strike");
+                    if (hero.Inventory.contains("sword")) {
+                        System.out.println("You drive your sword through the dark kings heart, killing him");
+                    }
+                } else if (bossResponse.equals("b")) {
+                    System.out.println("You have no sword");
+                    hero.health -= boss.attack;
+                } else {
+                    System.out.println("You chose wrong");
+                }
 
             } else if (choice1.equals("b")) {
                 System.out.println("You are confronted by an animal");
