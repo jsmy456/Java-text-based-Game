@@ -49,18 +49,20 @@
                 }
 
                 // find the treasure
-                System.out.println("You come to the spot marked on your map");
-                System.out.println("You begin to dig");
-                System.out.println("You soon hit something hard underneath the soft ground");
-                System.out.println("You find the chest the rumors foretold");
-                System.out.println("You open it and find it filled with gold coins");
-                System.out.println("You fill your bags and go on your way");
+//                System.out.println("You come to the spot marked on your map");
+//                System.out.println("You begin to dig");
+//                System.out.println("You soon hit something hard underneath the soft ground");
+//                System.out.println("You find the chest the rumors foretold");
+//                System.out.println("You open it and find it filled with gold coins");
+//                System.out.println("You fill your bags and go on your way");
+                Scenes.treasure();
 
                 // meet the merchant
-                System.out.println("As you enter the room you encounter an unknown man");
-                System.out.println("He calls you to come over, and asks if you want to see what he has for sale");
-                System.out.println("A. Sword (+10 attack)");
-                System.out.println("B. Health potion (+10 HP restore)");
+//                System.out.println("As you enter the room you encounter an unknown man");
+//                System.out.println("He calls you to come over, and asks if you want to see what he has for sale");
+//                System.out.println("A. Sword (+10 attack)");
+//                System.out.println("B. Health potion (+10 HP restore)");
+                Scenes.merchant();
                 merchantChoice = scanner.nextLine();
 
                 if (merchantChoice.equals("a")){
@@ -74,13 +76,14 @@
                 }
 
                 // Boss fight
-                System.out.println("Inventory: " + hero.Inventory);
-                System.out.println("You leave the merchant and walk through the large door");
-                System.out.println("In the room you meet the dark king");
-                System.out.println("You use the item you bought from the merchant"); // sword or health potion
-                System.out.println("The dark king attacks");
-                System.out.println("You move left or right: ");
+//                System.out.println("Inventory: " + hero.Inventory);
+//                System.out.println("You leave the merchant and walk through the large door");
+//                System.out.println("In the room you meet the dark king");
+//                System.out.println("You use the item you bought from the merchant"); // sword or health potion
+//                System.out.println("The dark king attacks");
+//                System.out.println("You move left or right: ");
                 directChoice = scanner.nextLine();
+                Scenes.boss();
 
                 if (directChoice.equals("left")) {
                     System.out.println("The blade moves past your face by millimeters");
